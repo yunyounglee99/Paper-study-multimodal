@@ -182,12 +182,14 @@
 - **attention masking**
     
 <img width="668" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 13 18" src="https://github.com/user-attachments/assets/bd7a224d-bee5-4042-ad2b-6ccc1aa3eb71">
+
  -   
     - U-Net의 경우 transformer와 독립적으로 이미지 내에 biderctional attention을 포함하고 있어서 두드러진 성능 개선이 보이지는 않음
     
 - **Patch size**
     
 <img width="667" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 23 56" src="https://github.com/user-attachments/assets/753c4f5b-4964-4978-ae9e-1c29b7e8fb4c">
+
 -     
     - linear : 더 큰 사이즈의 patch는 훈련 때 더 많은 이미지를 넣을 수 있어 inference때 계산량을 줄일 수 있지만, 성능 손실이 있을 수 있음
     - U-Net : 오히려 더 큰 patch가 성능이 더 좋음
