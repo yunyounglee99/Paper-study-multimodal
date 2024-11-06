@@ -63,7 +63,7 @@
     - 노이즈 제거 단계
     - Diffusion의 손실 함수
         
-<img width="270" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 19 11" src="https://github.com/user-attachments/assets/f3886e84-b1fc-496e-a008-dc520bac106d">
+<img width="320" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 19 11" src="https://github.com/user-attachments/assets/f3886e84-b1fc-496e-a008-dc520bac106d">
 -        
     - 학습 대상인 gaussian noise와 (t번째 step에서의 이미지, t, 텍스트 정보)가 주어진 theta에서의 gaussian noise와의 차이의 기댓값
         
