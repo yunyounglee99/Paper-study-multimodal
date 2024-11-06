@@ -1,4 +1,4 @@
-<img width="629" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-09-30_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 33 43" src="https://github.com/user-attachments/assets/fb10f379-1011-4346-9147-f654681d94d5"># 이윤영 - Transfusion: Predict the Next Token and
+<img width="662" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 41 00" src="https://github.com/user-attachments/assets/15295c47-ba04-44e8-a9c4-67e9f763fceb"># 이윤영 - Transfusion: Predict the Next Token and
 Diffuse Images with One Multi-Modal Model
 
 ## Abstract
@@ -42,7 +42,8 @@ Diffuse Images with One Multi-Modal Model
 - 다음 sequence 토큰 예측
 - Language Modeling의 loss 함수
     
-    ![스크린샷 2024-10-05 오전 11.12.03.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-05_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.12.03.png)
+<img width="156" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 12 03" src="https://github.com/user-attachments/assets/30f86029-62a1-40cf-b55e-07263c27b8b3">
+
     
 
 ### 2-2. Diffusion
@@ -52,17 +53,18 @@ Diffuse Images with One Multi-Modal Model
 - foward process
     - 노이즈 추가 단계
         
-        ![스크린샷 2024-10-05 오전 11.14.29.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/ec1e81a6-8f3d-4847-b4f5-056b1c14522e.png)
+![ec1e81a6-8f3d-4847-b4f5-056b1c14522e](https://github.com/user-attachments/assets/ef36328c-97c2-4c0c-9bd7-23f7aa8f4cfe)
+
         
     - e는 gaussian noise
         
-        ![스크린샷 2024-10-05 오전 11.16.05.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-05_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.16.05.png)
+ <img width="127" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 16 05" src="https://github.com/user-attachments/assets/a78acf1d-b0db-421a-a1e0-fb5bedd33a42">
         
 - reverse process
     - 노이즈 제거 단계
     - Diffusion의 손실 함수
         
-        ![스크린샷 2024-10-05 오전 11.19.11.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-05_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.19.11.png)
+<img width="270" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 19 11" src="https://github.com/user-attachments/assets/f3886e84-b1fc-496e-a008-dc520bac106d">
         
         학습 대상인 gaussian noise와 (t번째 step에서의 이미지, t, 텍스트 정보)가 주어진 theta에서의 gaussian noise와의 차이의 기댓값
         
@@ -71,14 +73,15 @@ Diffuse Images with One Multi-Modal Model
 
 ### 2-3. Latent Image Representation
 
-![스크린샷 2024-10-05 오전 11.40.17.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-05_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.40.17.png)
+<img width="329" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 40 17" src="https://github.com/user-attachments/assets/437d1d8e-9dc0-499e-84ca-dc60f3cc4b0a">
 
 - VAE를 사용하여 이미지를 더 낮은 차원의 latent space에 인코딩함
 - 특히 VQ-VAE를 사용해서 continuous latent embadding을 discrete latent embadding으로 변환
 
 ## 3. Transfusion
 
-![스크린샷 2024-09-30 오후 5.33.43.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-09-30_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.33.43.png)
+<img width="629" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-09-30_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 33 43" src="https://github.com/user-attachments/assets/92cfb926-91d3-4112-8ec1-db223325691f">
+
 
 ### Data Representation
 
@@ -97,7 +100,8 @@ Diffuse Images with One Multi-Modal Model
 
 ### Transfusion Attention
 
-![스크린샷 2024-10-05 오전 11.52.24.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-05_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.52.24.png)
+<img width="333" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 52 24" src="https://github.com/user-attachments/assets/4f1c9dd8-9520-4de6-9b81-5e8f236c76e7">
+
 
 - LM : casual masking 사용 →효과적인 loss와 gradient 계산 / next token의 정보 유출 가능성 x
 - image : 앞서 얘기한대로 sequence 방향이 중요하지 않음
@@ -105,7 +109,8 @@ Diffuse Images with One Multi-Modal Model
 - intra-image attention : model 성능을 올림(section 4.3)
 - **training**
     
-    ![스크린샷 2024-10-06 오후 4.36.08.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_4.36.08.png)
+<img width="216" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4 36 08" src="https://github.com/user-attachments/assets/7d9b187a-ccab-4ab7-bf06-7d9de6584d1b">
+
     
     - L_LM : compute per token
     - L_DDPM : compute per image(image patch로 퍼져있는)
@@ -123,7 +128,8 @@ Diffuse Images with One Multi-Modal Model
 
 - **Evaluation**
     
-    ![스크린샷 2024-10-06 오후 6.03.15.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.03.15.png)
+<img width="377" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 03 15" src="https://github.com/user-attachments/assets/f4d24f79-0cbc-4838-87c8-d2cc74a327d1">
+
     
     - text-text : Wikipidia, C4 corpus에서의 perplexity / Llama2 pretraining evaluation suite로 accuracy
     - text-image : MS-COCO benchmark 사용, zero-shot FID 사용해서 이미지 현실성 측정, CLIP score로 이미지/프롬프트 정렬성 측정
@@ -140,7 +146,8 @@ Diffuse Images with One Multi-Modal Model
     - 100만 단계로 훈련
 - **Model Configuration**
     
-    ![스크린샷 2024-10-06 오후 6.02.57.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.02.57.png)
+<img width="292" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 02 57" src="https://github.com/user-attachments/assets/7a9ecd0c-de6c-4389-a5e9-ba85f2c1af1a">
+
     
     - Llama 표준 설정에 맞게 0.16B, 0.37B, 0.76B, 1.4B, 7B parameter사용
     - linear patch는 전체 parameter에서 적은 부분을 차지함(약 0.5%) / U-Net patch는 소형 모델에서는 큰 부분을 차지하지만 대규모 모델에서는 미미한 편
@@ -156,11 +163,14 @@ Diffuse Images with One Multi-Modal Model
 
 ### Controlled Coparison with Chameleon
 
-![스크린샷 2024-10-06 오후 6.00.27.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.00.27.png)
+<img width="668" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 00 27" src="https://github.com/user-attachments/assets/11859453-265b-4c82-8a24-c0d7fbbc3d9e">
 
-![스크린샷 2024-10-06 오후 6.04.32.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.04.32.png)
 
-![스크린샷 2024-10-06 오후 6.04.54.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.04.54.png)
+<img width="671" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 04 32" src="https://github.com/user-attachments/assets/1b4ad11b-4828-4521-8bdd-6d2301abbffa">
+
+
+<img width="672" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 04 54" src="https://github.com/user-attachments/assets/5a438ed2-0291-44de-875e-53b252d32aa3">
+
 
 - 전반적으로 기존 Chameleon 방식보다 좋은 성능을 내보임
 - 이미지 생성, 계산 효율성, 텍스트 처리에서도 좋은 성능을 보임
@@ -172,47 +182,47 @@ Diffuse Images with One Multi-Modal Model
 
 - **attention masking**
     
-    ![스크린샷 2024-10-06 오후 6.13.18.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.13.18.png)
+<img width="668" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 13 18" src="https://github.com/user-attachments/assets/bd7a224d-bee5-4042-ad2b-6ccc1aa3eb71">
     
     - U-Net의 경우 transformer와 독립적으로 이미지 내에 biderctional attention을 포함하고 있어서 두드러진 성능 개선이 보이지는 않음
 - **Patch size**
     
-    ![스크린샷 2024-10-06 오후 6.23.56.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.23.56.png)
+<img width="667" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 23 56" src="https://github.com/user-attachments/assets/753c4f5b-4964-4978-ae9e-1c29b7e8fb4c">
     
     - linear : 더 큰 사이즈의 patch는 훈련 때 더 많은 이미지를 넣을 수 있어 inference때 계산량을 줄일 수 있지만, 성능 손실이 있을 수 있음
     - U-Net : 오히려 더 큰 patch가 성능이 더 좋음
     - patch 커질 수록 text의 성능이 감소
 - **Patch Encoding/Decoding Architecture**
     
-    ![스크린샷 2024-10-06 오후 6.28.56.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.28.56.png)
+<img width="672" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 28 56" src="https://github.com/user-attachments/assets/71287a20-df59-429c-8466-8c2a6e450eb4">
     
     - U-Net은 inductive bias에서 유리함 → U-Net은 그대로 둔 채 transformer 크기만 바꿔보자
     - transformer가 커질수록 U-Net의 상대적 이점이 줄어들지만 아주 사라지지는 않음
 - **Image Noising**
     
-    ![스크린샷 2024-10-06 오후 6.31.07.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.31.07.png)
+<img width="663" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 31 07" src="https://github.com/user-attachments/assets/432e3a85-43ec-405e-9842-b591bf9ff6f9">
     
     - 노이즈 제한이 이미지 캡셔닝 성능은 올리지만 다른 성능에서는 효과 없음
 
 ### Comparison with Image Generation Literature
 
-![스크린샷 2024-10-06 오후 6.35.02.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.35.02.png)
+<img width="670" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 35 02" src="https://github.com/user-attachments/assets/c8275e18-ab93-4742-9205-3a26a8608272">
 
 - 다른 이미지 생성모델과 비교해도 성능이 좋음
 - 다만 SD3는 natural한 데이터가 아닌 backtranslation으로 캡션을 생성한(아마도 다른 인공지능을 사용한 캡션 생성을 의미하는듯?) 데이터로 학습되었기 때문에 natural한 데이터로 학습한 transfusion보다 성능이 높다고 변명함
 
 ### Image Editing
 
-![스크린샷 2024-10-06 오후 6.41.00.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.41.00.png)
+<img width="662" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 41 00" src="https://github.com/user-attachments/assets/66b1d329-84b6-44f7-9846-76e3aa4948fd">
 
-![스크린샷 2024-10-06 오후 6.41.16.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.41.16.png)
+<img width="660" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 41 16" src="https://github.com/user-attachments/assets/488517f2-1fed-45e7-8364-6f1892e68c0c">
 
 이미지 수정(image-image)성능도 fine tuning하면 잘하는 것을 보임
 
-![스크린샷 2024-10-06 오후 6.42.43.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.42.43.png)
+<img width="670" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 42 43" src="https://github.com/user-attachments/assets/1730c831-e842-4543-b235-187662c0c920">
 
-![스크린샷 2024-10-06 오후 6.42.58.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.42.58.png)
+<img width="664" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 42 58" src="https://github.com/user-attachments/assets/153fefec-0c1c-4b7c-adeb-4606a4542705">
 
-![스크린샷 2024-10-06 오후 6.43.31.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.43.31.png)
+<img width="490" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 43 31" src="https://github.com/user-attachments/assets/5382afb0-d765-47d6-aab5-666c07d6b2a9">
 
-![스크린샷 2024-10-06 오후 6.43.47.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-10-06_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.43.47.png)
+<img width="494" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 43 47" src="https://github.com/user-attachments/assets/01abdad3-c447-442a-bd7d-e8e544065807">
