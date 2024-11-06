@@ -1,4 +1,4 @@
-<img width="662" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 41 00" src="https://github.com/user-attachments/assets/15295c47-ba04-44e8-a9c4-67e9f763fceb"># 이윤영 - Transfusion: Predict the Next Token and
+# 이윤영 - Transfusion: Predict the Next Token and
 Diffuse Images with One Multi-Modal Model
 
 ## Abstract
