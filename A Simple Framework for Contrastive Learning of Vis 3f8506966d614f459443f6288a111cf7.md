@@ -51,7 +51,8 @@
         
 <img width="448" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 22 51" src="https://github.com/user-attachments/assets/f53d1a43-8875-4993-8ef8-bc72cf7d2108">
         
-        h_i : avg pooling layer 후 출력
+-
+    - h_i : avg pooling layer 후 출력
         
     3. representation을 contrastive loss가 적용되는 공간으로 mapping함.
         - one hidden layer MLP 사용
