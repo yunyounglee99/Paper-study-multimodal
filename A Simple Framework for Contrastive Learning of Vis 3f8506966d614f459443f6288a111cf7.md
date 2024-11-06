@@ -34,7 +34,7 @@
 
 ## 2-1. The Contrastive Learning Framework
 
-<img width="209" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 06 09" src="https://github.com/user-attachments/assets/53fd09d9-b05f-4dbf-af10-fc83cff78162">
+<img width="400" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 06 09" src="https://github.com/user-attachments/assets/53fd09d9-b05f-4dbf-af10-fc83cff78162">
 
 
 - SimCLR는 representation을 같은 data example을 서로 다른 augment를 통해 view(?)간의 일치를 최대화하는 contrastive loss를 학습함
@@ -187,13 +187,11 @@
 
 <img width="429" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_12 22 49" src="https://github.com/user-attachments/assets/c279d2fc-e128-4dbc-9ac7-5b702516519a">
 
-![스크린샷 2024-08-21 오후 12.22.49.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_12.22.49.png)
-
 - l2 norm을 사용하고, tau=0.1일 때 성능이 가장 높은 것을 확인할 수 있음
 
 ## 5-2. Contrastive learning benefits(more) from larger batch sizes and longer training
 
-![스크린샷 2024-08-21 오후 12.29.20.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_12.29.20.png)
+<img width="461" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_12 29 20" src="https://github.com/user-attachments/assets/da96b467-11ff-4ae6-8960-3e3e77daec19">
 
 - epoch가 클수록, batch size가 클수록 성능이 더 좋아지는 것을 확인할 수 있음
 - 다만 batch size가 너무 크다고 좋은것은 아님(8192)
@@ -203,9 +201,9 @@
 
 ### Linear evaluation
 
-![스크린샷 2024-08-21 오후 12.40.15.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_12.40.15.png)
+<img width="403" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_12 40 15" src="https://github.com/user-attachments/assets/d176de5e-5d67-4a3c-aae5-4b261d0cfce8">
 
-![스크린샷 2024-08-21 오후 12.40.37.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_12.40.37.png)
+<img width="608" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_12 40 37" src="https://github.com/user-attachments/assets/1b8e23bf-15c7-46dc-af8b-95df5ad03fb9">
 
 각각의 실험들(linear evaluation, semi-supervised learning, transfer learning)에서 다른 self-supervised learning model들에 비해 SimCLR이 성능이 좋은 것을 확인할 수 있음
 
