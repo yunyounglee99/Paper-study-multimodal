@@ -41,7 +41,7 @@
 - 다음 sequence 토큰 예측
 - Language Modeling의 loss 함수
     
-<img width="156" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 12 03" src="https://github.com/user-attachments/assets/30f86029-62a1-40cf-b55e-07263c27b8b3">
+<img width="320" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 12 03" src="https://github.com/user-attachments/assets/30f86029-62a1-40cf-b55e-07263c27b8b3">
 
     
 
@@ -57,15 +57,15 @@
 -         
     - e는 gaussian noise
         
- <img width="127" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 16 05" src="https://github.com/user-attachments/assets/a78acf1d-b0db-421a-a1e0-fb5bedd33a42">
+ <img width="320" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 16 05" src="https://github.com/user-attachments/assets/a78acf1d-b0db-421a-a1e0-fb5bedd33a42">
         
 - reverse process
     - 노이즈 제거 단계
     - Diffusion의 손실 함수
         
 <img width="270" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 19 11" src="https://github.com/user-attachments/assets/f3886e84-b1fc-496e-a008-dc520bac106d">
-        
-        학습 대상인 gaussian noise와 (t번째 step에서의 이미지, t, 텍스트 정보)가 주어진 theta에서의 gaussian noise와의 차이의 기댓값
+-        
+    - 학습 대상인 gaussian noise와 (t번째 step에서의 이미지, t, 텍스트 정보)가 주어진 theta에서의 gaussian noise와의 차이의 기댓값
         
 - inference
     - 순수한 gaussian noise에서 noise를 계속 걷어내는 방식
