@@ -1,5 +1,4 @@
-# 이윤영 - Transfusion: Predict the Next Token and
-Diffuse Images with One Multi-Modal Model
+# Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model
 
 ## Abstract
 
