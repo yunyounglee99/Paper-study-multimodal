@@ -73,6 +73,7 @@
 
 <img width="490" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 45 01" src="https://github.com/user-attachments/assets/1d530bc9-57c0-43d3-9f14-ae7e63104e22">
 
+-
 
 <img width="300" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 45 20" src="https://github.com/user-attachments/assets/fdef7ca6-a002-4bd6-a4a9-1e0638241ae0">
     
