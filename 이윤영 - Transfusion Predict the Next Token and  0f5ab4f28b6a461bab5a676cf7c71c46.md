@@ -110,7 +110,7 @@
     
 <img width="216" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4 36 08" src="https://github.com/user-attachments/assets/7d9b187a-ccab-4ab7-bf06-7d9de6584d1b">
 
-    
+-    
     - L_LM : compute per token
     - L_DDPM : compute per image(image patch로 퍼져있는)
     - patchification 이전에 image level에서 diffusion loss 계산함
@@ -129,7 +129,7 @@
     
 <img width="377" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 03 15" src="https://github.com/user-attachments/assets/f4d24f79-0cbc-4838-87c8-d2cc74a327d1">
 
-    
+-    
     - text-text : Wikipidia, C4 corpus에서의 perplexity / Llama2 pretraining evaluation suite로 accuracy
     - text-image : MS-COCO benchmark 사용, zero-shot FID 사용해서 이미지 현실성 측정, CLIP score로 이미지/프롬프트 정렬성 측정
 - **Baseline**
@@ -147,7 +147,7 @@
     
 <img width="292" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 02 57" src="https://github.com/user-attachments/assets/7a9ecd0c-de6c-4389-a5e9-ba85f2c1af1a">
 
-    
+-    
     - Llama 표준 설정에 맞게 0.16B, 0.37B, 0.76B, 1.4B, 7B parameter사용
     - linear patch는 전체 parameter에서 적은 부분을 차지함(약 0.5%) / U-Net patch는 소형 모델에서는 큰 부분을 차지하지만 대규모 모델에서는 미미한 편
 - **Optimization**
@@ -182,7 +182,7 @@
 - **attention masking**
     
 <img width="668" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 13 18" src="https://github.com/user-attachments/assets/bd7a224d-bee5-4042-ad2b-6ccc1aa3eb71">
-    
+ -   
     - U-Net의 경우 transformer와 독립적으로 이미지 내에 biderctional attention을 포함하고 있어서 두드러진 성능 개선이 보이지는 않음
 - **Patch size**
     
@@ -194,13 +194,13 @@
 - **Patch Encoding/Decoding Architecture**
     
 <img width="672" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 28 56" src="https://github.com/user-attachments/assets/71287a20-df59-429c-8466-8c2a6e450eb4">
-    
+-    
     - U-Net은 inductive bias에서 유리함 → U-Net은 그대로 둔 채 transformer 크기만 바꿔보자
     - transformer가 커질수록 U-Net의 상대적 이점이 줄어들지만 아주 사라지지는 않음
 - **Image Noising**
     
 <img width="663" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 31 07" src="https://github.com/user-attachments/assets/432e3a85-43ec-405e-9842-b591bf9ff6f9">
-    
+ -   
     - 노이즈 제한이 이미지 캡셔닝 성능은 올리지만 다른 성능에서는 효과 없음
 
 ### Comparison with Image Generation Literature
