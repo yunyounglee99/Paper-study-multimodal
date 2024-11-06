@@ -1,4 +1,4 @@
-# 이윤영 - Transfusion: Predict the Next Token and
+<img width="629" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-09-30_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 33 43" src="https://github.com/user-attachments/assets/fb10f379-1011-4346-9147-f654681d94d5"># 이윤영 - Transfusion: Predict the Next Token and
 Diffuse Images with One Multi-Modal Model
 
 ## Abstract
@@ -22,7 +22,8 @@ Diffuse Images with One Multi-Modal Model
     - standard embedding layers : text tokens → vectors
     - patchification layers : 각각의 image를 sequence of patch vector로 표현
 
-![스크린샷 2024-09-30 오후 5.33.43.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20Transfusion%20Predict%20the%20Next%20Token%20and%20%200f5ab4f28b6a461bab5a676cf7c71c46/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-09-30_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.33.43.png)
+<img width="629" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-09-30_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 33 43" src="https://github.com/user-attachments/assets/5c425bc3-61ea-466f-b95f-54125073dcf5">
+
 
 - text에는 casual attention(단일방향, 인과적 attention) / image patch에는 bidirectional attention(양방향 attention)를 사용 → (이미지 패치는 텍스트와 달리 이전 이후 구분이 사실은 없으니 sequence로 나눠도 양방향이 모두 중요하니 이러한 방법을 사용한 것 같음)
 - inference에서는 language model(텍스트 생성)과 diffusion model(이미지 생성)를 결합한 디코딩 알고리즘 사용
