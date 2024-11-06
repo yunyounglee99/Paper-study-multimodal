@@ -198,14 +198,16 @@
 - **Patch Encoding/Decoding Architecture**
     
 <img width="672" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 28 56" src="https://github.com/user-attachments/assets/71287a20-df59-429c-8466-8c2a6e450eb4">
- 
+
+-
     - U-Net은 inductive bias에서 유리함 → U-Net은 그대로 둔 채 transformer 크기만 바꿔보자
     - transformer가 커질수록 U-Net의 상대적 이점이 줄어들지만 아주 사라지지는 않음
     
 - **Image Noising**
     
 <img width="663" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 31 07" src="https://github.com/user-attachments/assets/432e3a85-43ec-405e-9842-b591bf9ff6f9">
-   
+
+-
     - 노이즈 제한이 이미지 캡셔닝 성능은 올리지만 다른 성능에서는 효과 없음
 
 ### Comparison with Image Generation Literature
