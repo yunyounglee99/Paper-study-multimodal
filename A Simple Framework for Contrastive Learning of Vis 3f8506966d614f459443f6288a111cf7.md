@@ -34,7 +34,8 @@
 
 ## 2-1. The Contrastive Learning Framework
 
-![스크린샷 2024-08-20 오후 1.06.09.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_1.06.09.png)
+<img width="209" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 06 09" src="https://github.com/user-attachments/assets/53fd09d9-b05f-4dbf-af10-fc83cff78162">
+
 
 - SimCLR는 representation을 같은 data example을 서로 다른 augment를 통해 view(?)간의 일치를 최대화하는 contrastive loss를 학습함
     1. data example을 무작위로 변환하여 동일한 example을 두 개의 상관된 view인 x_i, x_j를 생성함 이 쌍을 positive pair라고 함.
@@ -48,7 +49,7 @@
             
     2. augmented data example을 representation vector로 변환 ResNet 사용
         
-        ![스크린샷 2024-08-20 오후 1.22.51.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_1.22.51.png)
+<img width="448" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 22 51" src="https://github.com/user-attachments/assets/f53d1a43-8875-4993-8ef8-bc72cf7d2108">
         
         h_i : avg pooling layer 후 출력
         
@@ -56,23 +57,22 @@
         - one hidden layer MLP 사용
         - sigma : ReLU(non-linearity)
             
-            ![스크린샷 2024-08-20 오후 1.29.09.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_1.29.09.png)
+<img width="324" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 29 09" src="https://github.com/user-attachments/assets/d4feec14-7110-46cf-9b42-6f76bd7aacb1">
             
     4. contrastive loss function : postive pair를 포함한 data set {x_i}가 주어졌을 때, contrastive prediction task는 주어진 x_i에 대해 {x_k}_k≠i 중에서 x_j를 식별하는 것을 목표로함
 - 임의로 N개의 example을 mini batch로 sampling하고, mini batch에서 파생된 augmented example 쌍에 대해 task를 정의 → 2N개의 data point 생성
 - negative pair를 따로 sampling하기보다 positive pair가 주어졌을때, 다른 2(N-1)개의 augmented example을 negative example로 간주
 - 
     
-    ![스크린샷 2024-08-20 오후 1.42.56.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_1.42.56.png)
+<img width="295" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 42 56" src="https://github.com/user-attachments/assets/c0f24559-246c-40d4-aa2f-00c81afe76b2">
     
-    ![스크린샷 2024-08-20 오후 1.45.01.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_1.45.01.png)
+<img width="490" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 45 01" src="https://github.com/user-attachments/assets/1d530bc9-57c0-43d3-9f14-ae7e63104e22">
     
-    ![스크린샷 2024-08-20 오후 1.45.20.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_1.45.20.png)
+<img width="232" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 45 20" src="https://github.com/user-attachments/assets/fdef7ca6-a002-4bd6-a4a9-1e0638241ae0">
     
 - 이 loss는 mini batch 내의 모든 positive pair((i,j), (j,i))에 대해 계산됨 → NT-Xent라고 부르자
 
-![스크린샷 2024-08-20 오후 1.48.29.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_1.48.29.png)
-
+<img width="623" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 48 29" src="https://github.com/user-attachments/assets/b2ed9718-a1dd-42c2-9fca-80460254cdae">
 ## 2-2. Training with Large Batch Size
 
 - 학습에 메모리 뱅크를 사용하지 않음 대신 훈련 batch 크기 N을 다양하게(256-8192) 조정함
@@ -105,8 +105,9 @@
 - data augmentation은 지도/비지도 학습에 널리 사용되었지만, contrastive predict task에 사용된 적은 많이 없음(대부분 network 아키텍처를 변경하는 방법을 사용)
 - 
     
-    ![스크린샷 2024-08-20 오후 3.09.43.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.09.43.png)
-    
+<img width="326" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3 09 43" src="https://github.com/user-attachments/assets/1289a943-5d0b-438b-ac52-3d749d145dea">
+
+-    
     - (a).
         - A : local view, B : Global view
         - B→A 간의 일치를 학습
@@ -119,7 +120,7 @@
 
 ## 3-1. Composition of data augmentation operations is crucial for learning good representation
 
-![스크린샷 2024-08-21 오후 12.48.33.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_12.48.33.png)
+<img width="523" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_12 48 33" src="https://github.com/user-attachments/assets/56101c90-51d7-4865-85cc-d13229580e92">
 
 - 각종 data augmentation의 방법들
 - 데이터 증강의 영향을 연구함(crop, resize, flip, cutout, color dist, blur등)
@@ -127,19 +128,19 @@
     - 원본과 resize data를 구분함
     - 비대칭 data augment가 성능에 부정적인 영향을 미치나, 개별 augment의 영향을 실질적으로 바꾸지는 않음
 
-![스크린샷 2024-08-21 오전 10.48.14.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.48.14.png)
+<img width="523" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_10 48 14" src="https://github.com/user-attachments/assets/706f0299-2b84-4b5a-ad50-7f207043c90b">
 
 - 대각선 셀 : 각 augment가 단독으로 적용되었을 때임 → 성능이 아주 좋지는 않음
 - (color, crop) 조합이 가장 좋은 성능을 보임
 - random crop만 쓰는 것은 대부분의 이미지 패치가 유사한 색상 분포를 가지는 문제를 가지고 있기 때문에 별로 성능이 좋지 않음
     
-    ![스크린샷 2024-08-21 오전 11.02.29.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.02.29.png)
+<img width="475" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 02 29" src="https://github.com/user-attachments/assets/a00c80f1-aef9-47c6-936f-dfee2a7ce758">
     
 - color dist가 data의 color 분포를 크게 바꿈 → predict 어렵게 함 → 일반화된 feature 학습
 
 ## 3-2. Contrastive learning needs stronger data augmentation than supervised learning
 
-![스크린샷 2024-08-21 오전 11.12.51.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.12.51.png)
+<img width="518" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 12 51" src="https://github.com/user-attachments/assets/23136e60-039d-449f-be92-ab5e33b5f1d6">
 
 - SimCLR은 color dist가 강해지면 더욱 성능이 올라가고, supervised는 점점 떨어짐
 - 성능은 supervised가 조금 더 좋긴함
@@ -148,21 +149,21 @@
 
 ## 4-1. Unsupervised contrastive learning benefits(more) from bigger  models
 
-![스크린샷 2024-08-21 오전 11.23.38.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.23.38.png)
+<img width="495" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 23 38" src="https://github.com/user-attachments/assets/ca73bc2a-32e2-4287-beed-53ea96d4a68f">
 
 - 파란색 : 100epoch unsupervised model / 빨간색 : 1000epoch unsupervised model / 녹색 : 90epoch supervised model
 - model의 크기가 커질수록 supervised와의 격차가 줄어듦(그러나 supervised가 아직 좋긴함)
 
 ## 4-2. A nonlinear projection head improves the representation quality of the layer before it
 
-![스크린샷 2024-08-21 오전 11.43.49.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.43.49.png)
+<img width="393" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 43 49" src="https://github.com/user-attachments/assets/425464d4-58fb-46e1-a782-5fc715c350a5">
 
 - non-linear progection head( g(h) )의 중요성을 연구함
 - non-linear head가 linear head보다 성능이 더 좋은 것을 확인할 수 있음
 - non-linear projection 이전의 표현을 사용하는 것이 중요한 이유는 contrastive loss가 유발하는 정보 손실 때문이라고 추측함(..?)
 - z=g(h)는 data augmentation에 대해 불변하도록 학습되기 때문에 g는 색상이나 객체의 방향과 같은 downstream task에 유용할 수 있는 정보를 제거할 수 있음
     
-    ![스크린샷 2024-08-21 오전 11.55.06.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_11.55.06.png)
+<img width="478" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 55 06" src="https://github.com/user-attachments/assets/c0607db8-bff5-42f3-8729-e3d898ff00fc">
     
 - non-linear projection 이후 많은 data의 representation을 손실한 것을 확인할 수 있음
     
@@ -173,14 +174,17 @@
 
 ## 5-1. Normalized cross entropy loss with adjustable temperature works better than alternative
 
-![스크린샷 2024-08-21 오후 12.02.21.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_12.02.21.png)
+<img width="530" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_12 02 21" src="https://github.com/user-attachments/assets/3458b6ce-29a2-4adc-a5d3-45c5539b5ef0">
 
 1. NT-Xent loss : temp와 cosine sim을 사용해 negative example의 난이도에 따라 weight를 다르게 부여함. → 학습이 보다 어려운 negative example을 통해 더 잘 이루어질 수 있도록함
 2. NT-Logistic loss : negative loss의 난이도를 고려하지 않고, logistic func의 출력에 따라 gradient를 계산함
 3. Margin Triplet loss : negative example과 positive example 간의 차이가 일정 마진 m을 초과하지 않을때만 gradient를 계산함 → negative example이 어느 정도 가까워졌을때만 학습에 반영되도록 함
 - 2,3은 negative example의 난이도를 고려하지 않기 때문에 semi-hard negative example mining과 같은 추가적인 기법이 필요함
 
-![스크린샷 2024-08-21 오후 12.21.40.png](A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Vis%203f8506966d614f459443f6288a111cf7/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-08-21_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_12.21.40.png)
+<img width="447" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_12 21 40" src="https://github.com/user-attachments/assets/a0f9b0f4-e03f-4a31-9f41-a916933495f5">
+
+<img width="429" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_12 22 49" src="https://github.com/user-attachments/assets/c279d2fc-e128-4dbc-9ac7-5b702516519a">
+
 
 - NT-Xent을 사용한 model의 성능이 가장 좋은 것을 확인할 수 있음
 
