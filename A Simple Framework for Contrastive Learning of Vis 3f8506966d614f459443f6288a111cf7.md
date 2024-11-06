@@ -66,8 +66,7 @@
     4. contrastive loss function : postive pair를 포함한 data set {x_i}가 주어졌을 때, contrastive prediction task는 주어진 x_i에 대해 {x_k}_k≠i 중에서 x_j를 식별하는 것을 목표로함
 - 임의로 N개의 example을 mini batch로 sampling하고, mini batch에서 파생된 augmented example 쌍에 대해 task를 정의 → 2N개의 data point 생성
 - negative pair를 따로 sampling하기보다 positive pair가 주어졌을때, 다른 2(N-1)개의 augmented example을 negative example로 간주
-- 
-    
+
 <img width="295" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 42 56" src="https://github.com/user-attachments/assets/c0f24559-246c-40d4-aa2f-00c81afe76b2">
     
 <img width="490" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 45 01" src="https://github.com/user-attachments/assets/1d530bc9-57c0-43d3-9f14-ae7e63104e22">
