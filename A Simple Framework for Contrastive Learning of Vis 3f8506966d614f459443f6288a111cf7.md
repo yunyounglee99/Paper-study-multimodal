@@ -59,7 +59,9 @@
         - sigma : ReLU(non-linearity)
             
 <img width="324" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-08-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1 29 09" src="https://github.com/user-attachments/assets/d4feec14-7110-46cf-9b42-6f76bd7aacb1">
-            
+
+-
+
     4. contrastive loss function : postive pair를 포함한 data set {x_i}가 주어졌을 때, contrastive prediction task는 주어진 x_i에 대해 {x_k}_k≠i 중에서 x_j를 식별하는 것을 목표로함
 - 임의로 N개의 example을 mini batch로 sampling하고, mini batch에서 파생된 augmented example 쌍에 대해 task를 정의 → 2N개의 data point 생성
 - negative pair를 따로 sampling하기보다 positive pair가 주어졌을때, 다른 2(N-1)개의 augmented example을 negative example로 간주
