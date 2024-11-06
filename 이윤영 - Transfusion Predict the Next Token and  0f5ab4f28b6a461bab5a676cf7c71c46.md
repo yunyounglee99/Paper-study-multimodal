@@ -54,7 +54,7 @@
         
 ![ec1e81a6-8f3d-4847-b4f5-056b1c14522e](https://github.com/user-attachments/assets/ef36328c-97c2-4c0c-9bd7-23f7aa8f4cfe)
 
-        
+-         
     - e는 gaussian noise
         
  <img width="127" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 16 05" src="https://github.com/user-attachments/assets/a78acf1d-b0db-421a-a1e0-fb5bedd33a42">
