@@ -141,7 +141,7 @@ reweighted bound는 아래와 같음
 - $\varphi_i(z_t) \in \mathbb{R}^{N \times d_\epsilon}$ : U-Net의 $z_t$에서 추출된 중간 representation
 - $W_{Q}^{(i)} \in \mathbb{R}^{d \times d_\tau}$, $W_{K}^{(i)} \in \mathbb{R}^{d \times d_\tau}$, $W_{V}^{(i)} \in \mathbb{R}^{d \times d_\tau}$ (learnable projection matrics)
 
-<img width="446" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3 24 25" src="https://github.com/user-attachments/assets/34940ad8-b5ea-4441-a187-b081eb96df29">
+<img width="500" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3 24 25" src="https://github.com/user-attachments/assets/34940ad8-b5ea-4441-a187-b081eb96df29">
 
 
 <conditional LDM>
