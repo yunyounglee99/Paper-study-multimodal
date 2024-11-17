@@ -24,7 +24,8 @@
 
 ### Departure to Latent Space
 
-![스크린샷 2024-11-16 오후 5.13.03.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-16_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.13.03.png)
+<img width="446" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-16_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 13 03" src="https://github.com/user-attachments/assets/d5d7f824-36da-4f56-a61d-c9c5f9b2718e">
+
 
 - 픽셀 공간에서 pre-trained 된 diffusion 모델의 분석으로 시작함
 - likelihood 기반의 모델학습은 두가지로 나뉨
@@ -54,7 +55,7 @@
 
 # 3. Method
 
-![스크린샷 2024-11-15 오후 6.17.22.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-15_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.17.22.png)
+<img width="445" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-15_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 17 22" src="https://github.com/user-attachments/assets/bb57ca59-7fbf-4343-b5bf-e262d3dbb907">
 
 - 고해상도 이미지 합성을 위한 diffusion model의 training은 픽셀 공간에서 작동하므로 perceptual하게 중요하지 않은 디테일들을 무시하도록 손실항목을 subsampling하여 계산 요구량을 줄일 수 있음
     
@@ -77,8 +78,8 @@
 
 <구체적 방법론>
 
-1. RGB 공간의 이미지 $x \in \R^{H\times W\times3}$가 주어졌을 때, 인코더 $\mathcal{E}$는 $x$를 latent representation $z=\mathcal{E}(x)$으로 인코딩함.
-2. 디코더 $\mathcal{D}$는 $z$로부터 이미지를 재구성하여, $\tilde{x} = \mathcal{D}(z)= \mathcal{D}(\mathcal{E}(x))$를 생성함. 이때, $z \in \mathbb{R}^{h \times w \times c}$이고, 인코더는 이미지를 downsampling(factor $f = H/h = W/w$, $f = 2^m, \ m\in \N$)함.
+1. RGB 공간의 이미지 $x \in \mathbb{R}^{H\times W\times3}$가 주어졌을 때, 인코더 $\mathcal{E}$는 $x$를 latent representation $z=\mathcal{E}(x)$으로 인코딩함.
+2. 디코더 $\mathcal{D}$는 $z$로부터 이미지를 재구성하여, $\tilde{x} = \mathcal{D}(z)= \mathcal{D}(\mathcal{E}(x))$를 생성함. 이때, $z \in \mathbb{R}^{h \times w \times c}$이고, 인코더는 이미지를 downsampling(factor $f = H/h = W/w$, $f = 2^m, \ m\in \mathbb{N}$)함.
 - 그래서 고차원 variance latent space를 피하기 위해 두가지 normalize 방식을 실험함(너무 넓게 퍼져있으면 성능이 떨어질 수도 있으므로)
     1. **KL-reg** : VAE와 유사하게 학습된 latent space를 표준 정규 분포로 유도하는 약간의 KL-패널티 적용
     2. **VQ-reg** : vector quantization layer 추가
@@ -89,7 +90,8 @@
 
 ### **Diffusion model**
 
-![스크린샷 2024-11-16 오후 6.56.12.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-16_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.56.12.png)
+<img width="350" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-16_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 56 12" src="https://github.com/user-attachments/assets/8333002c-7be6-4e01-98fa-bea4ee00f660">
+
 
 - $t$는 $\{ 1, ... \ ,T\}$에서 균일하게 샘플링
 
@@ -106,7 +108,8 @@
 
 reweighted bound는 아래와 같음
 
-![스크린샷 2024-11-16 오후 7.24.01.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-16_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_7.24.01.png)
+<img width="333" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-16_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7 24 01" src="https://github.com/user-attachments/assets/7fe0b1a8-f559-44bf-96aa-58973b6cabe5">
+
 
 - 기본적인 $L_{DM}$과 다른점은 픽셀 공간에서의 $x$가 아닌, 인코더를 거친 $\mathcal{E}(x)$에서의 기댓값으로 정의된 것을 확인할 수 있고, 그래서 노이즈 $\epsilon_\theta$에 들어가는 값도 $x_t$가 아닌 latent space의 $z_t$를 사용하는 것을 확인할 수 있음
 - model의 neural backbone은 time conditional U-Net으로 구현됨
@@ -121,28 +124,32 @@ reweighted bound는 아래와 같음
 - U-Net backbone에 cross-attention 매커니즘을 추가함
     - cross-attention은 다양한 input modality들로부터 attention을 학습할 수 있음
 - 다양한 input modality를 전처리하기 위해 domain-specific encoder)$\tau_\theta$를 도입함
-- 이 encoder는 conditional input $y$를 중간 representation $\tau_\theta(y)\in \R^{M\times d_\tau}$로 변환함
+- 이 encoder는 conditional input $y$를 중간 representation $\tau_\theta(y)\in \mathbb{R}^{M\times d_\tau}$로 변환함
 - 이 중간 representation은 U-Net의 intermidiate layer로 매핑함
 
 <cross-attention>
 
-![스크린샷 2024-11-17 오후 2.31.18.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_2.31.18.png)
+<img width="315" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2 31 18" src="https://github.com/user-attachments/assets/ba3bd904-6afe-4e88-bccd-1bd5bdc44601">
 
-![스크린샷 2024-11-17 오후 2.31.48.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_2.31.48.png)
+
+<img width="424" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2 31 48" src="https://github.com/user-attachments/assets/ad37f33e-d512-46ba-a14c-6ceb143d3153">
+
 
 - $Q$ : U-Net에서 추출된 $z_t$의 중간 representation
 - $K$ : conditional input $y$의 encoder 출력
 - $V$ : 동일하게 conditional input $y$의 encoder 출력
-- $\varphi_i(z_t) \in \R^{N \times d_\epsilon}$ : U-Net의 $z_t$에서 추출된 중간 representation
-- $W_{Q}^{(i)} \in \R^{d \times d_\tau}$, $W_{K}^{(i)} \in \R^{d \times d_\tau}$, $W_{V}^{(i)} \in \R^{d \times d_\tau}$ (learnable projection matrics)
+- $\varphi_i(z_t) \in \mathbb{R}^{N \times d_\epsilon}$ : U-Net의 $z_t$에서 추출된 중간 representation
+- $W_{Q}^{(i)} \in \mathbb{R}^{d \times d_\tau}$, $W_{K}^{(i)} \in \mathbb{R}^{d \times d_\tau}$, $W_{V}^{(i)} \in \mathbb{R}^{d \times d_\tau}$ (learnable projection matrics)
 
-![스크린샷 2024-11-17 오후 3.24.25.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.24.25.png)
+<img width="446" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3 24 25" src="https://github.com/user-attachments/assets/34940ad8-b5ea-4441-a187-b081eb96df29">
+
 
 <conditional LDM>
 
 - 다음 loss를 학습함
 
-![스크린샷 2024-11-17 오후 3.25.57.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.25.57.png)
+<img width="392" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3 25 57" src="https://github.com/user-attachments/assets/49ec9f61-766e-4eb5-97e5-80e83f1090e8">
+
 
 - $\tau_\theta$와 $\epsilon_\theta$는 동시에 최적화됨
 
@@ -150,15 +157,18 @@ reweighted bound는 아래와 같음
 
 <Pixel 기반 diffusion vs LDMs>
 
-![스크린샷 2024-11-17 오후 3.51.22.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.51.22.png)
+<img width="950" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3 51 22" src="https://github.com/user-attachments/assets/92e3f622-2523-4fb7-8cb9-eebe84ac5f59">
+
 
 - VQ-regularized latent space에서 학습된 LDMs은 continuous latent space보다 샘플 품질에서 더 나은 성능을 보임
 
 ## 4.1. Perceptual Compression Tradeoff
 
-![스크린샷 2024-11-17 오후 3.39.32.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.39.32.png)
+<img width="859" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3 39 32" src="https://github.com/user-attachments/assets/1742f81d-18ca-4f1f-96f5-db939ec49e89">
 
-![스크린샷 2024-11-17 오후 3.55.20.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.55.20.png)
+
+<img width="442" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3 55 20" src="https://github.com/user-attachments/assets/d54d5f31-dafd-4082-87c6-dc68dc1ca5d0">
+
 
 - 이 실험에서는 LDMs가 downsampling rate $f=\{1, 2,4,8,16,32\}$에서 어떻게 작동하는지 분석함 (LDM-1은 픽셀기반 모델을 의미 / A100 단일 GPU로 실험)
 - Table 8. 은 LDM에 사용된 first stage model의 hyper parameter 및 재구성 성능을 보여줌
@@ -174,7 +184,8 @@ reweighted bound는 아래와 같음
     - 효율성과 perceptual faithful한 결과가 잘 나옴
     - 픽셀 기반 모델(LDM-1)과 비교했을때 확실히 성능이 잘나온 것을 확인할 수 있음
 
-![스크린샷 2024-11-17 오후 4.02.41.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_4.02.41.png)
+<img width="436" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4 02 41" src="https://github.com/user-attachments/assets/3764eec6-3073-4558-a4fc-8158e5a42fd5">
+
 
 - 다양한 노이즈 제거 step 수에 따른 샘플릭속도를 FID와 비교
 
@@ -189,9 +200,11 @@ reweighted bound는 아래와 같음
 
 <unconditional model>
 
-![스크린샷 2024-11-17 오후 4.41.04.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_4.41.04.png)
+<img width="451" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4 41 04" src="https://github.com/user-attachments/assets/6868c95d-ea5c-4b92-a748-064d34a80fa7">
 
-![스크린샷 2024-11-17 오후 4.52.46.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_4.52.46.png)
+
+<img width="899" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4 52 46" src="https://github.com/user-attachments/assets/3da19170-ec4b-497c-b74c-d09f217602ea">
+
 
 - 256*256 해상도의 이미지로 실험
 - 샘플 품질, 데이터 매니폴드 커버리지(precision and recall) 두가지 지표를 사용해 평가함
@@ -206,33 +219,40 @@ reweighted bound는 아래와 같음
 
 <text-to-image>
 
-![스크린샷 2024-11-17 오후 5.27.00.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.27.00.png)
+<img width="913" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 27 00" src="https://github.com/user-attachments/assets/0582ab02-fad2-4c1f-ac1e-10483d411586">
+
 
 - LAION-400M 에서 언어 프롬프트를 조건으로 사용하는 1.45B parameter의 KL-정규화된 LDM을 학습함
 - BERT tokenizer 사용, $\tau_\theta$를 트랜스포머로 구현 → latent code로 infer → multi-head cross attention으로 U-Net으로 매핑함
 
-![스크린샷 2024-11-17 오후 5.27.50.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.27.50.png)
+<img width="442" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 27 50" src="https://github.com/user-attachments/assets/10750161-0197-4d5c-af27-9e420a0c04f6">
+
 
 - parameter수를 크게 줄이면서도 다른 모델 대비 성능이 뛰어난 것을 확인할 수 있음
 
 <sementic layouts>
 
-![스크린샷 2024-11-17 오후 5.30.36.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.30.36.png)
+<img width="434" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 30 36" src="https://github.com/user-attachments/assets/e36022ac-755e-401a-89b7-a413048d3370">
 
-![스크린샷 2024-11-17 오후 6.32.15.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.32.15.png)
+
+<img width="853" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 32 15" src="https://github.com/user-attachments/assets/79445c57-0a89-4686-8289-bd7d530d9417">
+
 
 - sementic layout 실험에서도 좋은 성능을 확인할 수 있음
 
 ### 4.3.2. Convolutional Sampling Beyond 256^2
 
-![스크린샷 2024-11-17 오후 6.31.35.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.31.35.png)
+<img width="515" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 31 35" src="https://github.com/user-attachments/assets/e98ebccd-2983-40b9-b2db-501db74df307">
 
-![스크린샷 2024-11-17 오후 5.40.20.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.40.20.png)
+
+<img width="458" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 40 20" src="https://github.com/user-attachments/assets/1c4981bf-7e57-4fc4-a6fe-b015465c0f8b">
+
 
 - 256^2의 해상도로 학습했지만 더 큰 해상도에서도 일반화가 가능한 것을 보임(512^2, 1024^2)
 - signal-to-noise ratio 가 결과에 중요한 영향을 끼침
 
-![스크린샷 2024-11-17 오후 5.41.05.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.41.05.png)
+<img width="560" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 41 05" src="https://github.com/user-attachments/assets/92e9355c-ef34-4362-aaa0-ba36c3663252">
+
 
 - text-to-image에도 적용이 가능
 
@@ -241,21 +261,27 @@ reweighted bound는 아래와 같음
 - 해상도가 낮은 이미지를 condition으로 연결해서 super resolution에 사용할 수도 있음
 - 저해상도 condition $y$를 U-Net과 연결, $\tau_\theta$는 identity로 설정
 
-![스크린샷 2024-11-17 오후 5.51.50.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.51.50.png)
+<img width="424" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 51 50" src="https://github.com/user-attachments/assets/916dd0ed-d3e9-49ff-97d0-3544d0b9bd9d">
 
-![스크린샷 2024-11-17 오후 6.33.10.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.33.10.png)
 
-![스크린샷 2024-11-17 오후 5.52.09.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.52.09.png)
+<img width="861" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 33 10" src="https://github.com/user-attachments/assets/8105c99f-7f77-4255-9923-a323b9a991be">
+
+
+<img width="437" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5 52 09" src="https://github.com/user-attachments/assets/b5b773be-cc4d-4352-8b08-7fdc325cfc1b">
+
 
 - 완전 SR3보다 좋다할 수는 없지만 그래도 동등한 성능을 보여주고 있음
 
 ## 4.5. Inpainting with Latent Diffusion
 
-![스크린샷 2024-11-17 오후 6.24.43.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.24.43.png)
+<img width="434" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 24 43" src="https://github.com/user-attachments/assets/e87bb806-d828-4ab1-8028-f529383a1c5a">
 
-![스크린샷 2024-11-17 오후 6.12.51.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.12.51.png)
 
-![스크린샷 2024-11-17 오후 6.25.05.png](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-11-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.25.05.png)
+<img width="434" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 12 51" src="https://github.com/user-attachments/assets/e3cee6a2-567e-45e6-8bbf-883baa1e7838">
+
+
+<img width="430" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-17_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 25 05" src="https://github.com/user-attachments/assets/67a028fb-9b43-4f2a-be94-a045658ad2f9">
+
 
 - inpainting : 이미지의 마스킹된 영역을 새로운 컨텐츠로 채우는 작업
 - KL 및 VQ reg 적용 LDM-1 vs LDM-4 vs first step에 attention 없는 LDM-4(디코딩 시 GPU 메모리 줄임)
