@@ -4,22 +4,6 @@
 
 [https://velog.io/@jochedda/딥러닝-Autoencoder-개념-및-종류](https://velog.io/@jochedda/%EB%94%A5%EB%9F%AC%EB%8B%9D-Autoencoder-%EA%B0%9C%EB%85%90-%EB%B0%8F-%EC%A2%85%EB%A5%98)
 
-# Diffusion 기본개념(수식) 공부
-
-![이름 없는 노트북 (3)-1.jpg](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/c64fbeb4-1809-46a8-8caf-f76400110d94.png)
-
-![이름 없는 노트북 (3)-2.jpg](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/6bc62b8d-0c3e-4443-98a9-7c4d27c926cd.png)
-
-![이름 없는 노트북 (3)-3.jpg](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/58a94ca1-9bcc-4277-a2be-b08e2bf7cbae.png)
-
-![이름 없는 노트북 (3)-4.jpg](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/97c7414a-44d5-4d24-aaae-436e2dc5452f.png)
-
-![이름 없는 노트북 (3)-5.jpg](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/%25E1%2584%258B%25E1%2585%25B5%25E1%2584%2585%25E1%2585%25B3%25E1%2586%25B7_%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25B9%25E1%2584%2582%25E1%2585%25B3%25E1%2586%25AB_%25E1%2584%2582%25E1%2585%25A9%25E1%2584%2590%25E1%2585%25B3%25E1%2584%2587%25E1%2585%25AE%25E1%2586%25A8_(3)-5.jpg)
-
-![이름 없는 노트북 (3)-6.jpg](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/64e33511-323a-4991-8044-a6c85ea8c217.png)
-
-![이름 없는 노트북 (3)-7.jpg](%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%20-%20High-Resolution%20Image%20Synthesis%20with%20La%2013ba7930e09c814a80b8d8c910407f07/2ab7bdc4-6e82-436c-b1b4-1310f6ad66ec.png)
-
 # 1. Introduction
 
 - 이미지 합성 - 최근 CV 분야에서 눈부신 발전을 이룬 분야 중 하나 but, 가장 높은 계산을 요구함(because of 고해상도 이미지, 수십억개의 parameter 포함)
