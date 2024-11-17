@@ -78,7 +78,7 @@
 <구체적 방법론>
 
 1. RGB 공간의 이미지 $x \in \R^{H\times W\times3}$가 주어졌을 때, 인코더 $\mathcal{E}$는 $x$를 latent representation $z=\mathcal{E}(x)$으로 인코딩함.
-2. 디코더 $\mathcal{D}$는 $z$로부터 이미지를 재구성하여, $\tilde{x} = \mathcal{D}(z)= \mathcal{D}(\mathcal{E}(x))$를 생성함. 이때, $z \in \R^{h \times w \times c}$이고, 인코더는 이미지를 downsampling(factor $f = H/h = W/w$, $f = 2^m, \ m\in \N$)함.
+2. 디코더 $\mathcal{D}$는 $z$로부터 이미지를 재구성하여, $\tilde{x} = \mathcal{D}(z)= \mathcal{D}(\mathcal{E}(x))$를 생성함. 이때, $z \in \mathbb{R}^{h \times w \times c}$이고, 인코더는 이미지를 downsampling(factor $f = H/h = W/w$, $f = 2^m, \ m\in \N$)함.
 - 그래서 고차원 variance latent space를 피하기 위해 두가지 normalize 방식을 실험함(너무 넓게 퍼져있으면 성능이 떨어질 수도 있으므로)
     1. **KL-reg** : VAE와 유사하게 학습된 latent space를 표준 정규 분포로 유도하는 약간의 KL-패널티 적용
     2. **VQ-reg** : vector quantization layer 추가
