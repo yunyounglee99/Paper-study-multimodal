@@ -1,4 +1,4 @@
-<img width="725" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-12-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6 27 04" src="https://github.com/user-attachments/assets/9f0f0b69-df9d-4b11-a7cf-08f4906934c0"># 이윤영 - OpenVLA : An Open-Source Vision-Language-Action Model
+# 이윤영 - OpenVLA : An Open-Source Vision-Language-Action Model
 
 <img width="734" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-12-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3 52 30" src="https://github.com/user-attachments/assets/e7b38aa3-1c4b-48cd-970f-0cf80e9cc72e">
 
